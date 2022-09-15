@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Server_Tanchikov
 {
@@ -8,9 +10,12 @@ namespace Server_Tanchikov
     {
         protected internal string Id { get; private set; }
         protected internal NetworkStream Stream { get; private set; }
-        string userName;
+        //string userName;
+        public string userName { get; set; }
         TcpClient client;
         ServerObject server; // объект сервера
+
+        Form1 form = new Form1();
 
         public ClientObject(TcpClient tcpClient, ServerObject serverObject)
         {
@@ -22,16 +27,21 @@ namespace Server_Tanchikov
 
         public void Process()
         {
+            
             try
             {
                 Stream = client.GetStream();
                 // получаем имя пользователя
                 string message = GetMessage();
                 userName = message;
-
+                //clients_name.Add(userName);
                 message = userName + " вошел в чат";
+                //form.listBox1.Items.Add(userName);
+                
                 // посылаем сообщение о входе в чат всем подключенным пользователям
                 server.BroadcastMessage(message, this.Id);
+                //server.BroadcastMessage(message, this.Id);
+                
                 Console.WriteLine(message);
                 // в бесконечном цикле получаем сообщения от клиента
                 while (true)
@@ -54,6 +64,7 @@ namespace Server_Tanchikov
             }
             catch (Exception e)
             {
+                
                 Console.WriteLine(e.Message);
             }
             finally
@@ -62,6 +73,7 @@ namespace Server_Tanchikov
                 server.RemoveConnection(this.Id);
                 Close();
             }
+            form.addPLayer();
         }
 
         // чтение входящего сообщения и преобразование в строку

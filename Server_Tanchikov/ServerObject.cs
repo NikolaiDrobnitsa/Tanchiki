@@ -11,8 +11,8 @@ namespace Server_Tanchikov
     public class ServerObject
     {
         static TcpListener tcpListener; // сервер для прослушивания
-        List<ClientObject> clients = new List<ClientObject>(); // все подключения
-
+        public List<ClientObject> clients = new List<ClientObject>(); // все подключения
+        Form1 form;
         protected internal void AddConnection(ClientObject clientObject)
         {
             clients.Add(clientObject);
@@ -32,6 +32,7 @@ namespace Server_Tanchikov
             {
                 tcpListener = new TcpListener(IPAddress.Any, 8888);
                 tcpListener.Start();
+                
                 Console.WriteLine("Сервер запущен. Ожидание подключений...");
 
                 while (true)
@@ -66,7 +67,6 @@ namespace Server_Tanchikov
         protected internal void Disconnect()
         {
             tcpListener.Stop(); //остановка сервера
-
             for (int i = 0; i < clients.Count; i++)
             {
                 clients[i].Close(); //отключение клиента
