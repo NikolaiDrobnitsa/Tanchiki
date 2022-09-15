@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tanchiki", "Tanchiki\Tanchiki.csproj", "{0D6C7001-34D3-4373-9B28-2FF36CA85C54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server_Tanchikov", "Server_Tanchikov\Server_Tanchikov.csproj", "{A394D04A-81A9-457E-8AF9-C27A2D067707}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0D6C7001-34D3-4373-9B28-2FF36CA85C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D6C7001-34D3-4373-9B28-2FF36CA85C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D6C7001-34D3-4373-9B28-2FF36CA85C54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A394D04A-81A9-457E-8AF9-C27A2D067707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A394D04A-81A9-457E-8AF9-C27A2D067707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A394D04A-81A9-457E-8AF9-C27A2D067707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A394D04A-81A9-457E-8AF9-C27A2D067707}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
